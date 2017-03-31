@@ -1,0 +1,62 @@
+  .edit{
+    display: none;
+  }
+
+  paper-input,
+  paper-checkbox {
+    margin-top: 20px;
+
+
+  }
+
+  body {
+    background-color: white;
+    padding-top: 70px;
+    text-decoration: none;
+    /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+  }
+
+  article {
+    color: black;
+  }
+
+  footer {
+    margin: 50px 0;
+  }
+
+  p {
+    color: black;
+    font-family: "Myriad Set Pro", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    font-weight: 400;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-transform: none;
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+
+  .subheading {
+    color: black;
+  }
+
+  .meta {
+    color: black;
+  }
+
+  p {
+    margin: 0 0 10px;
+    font-family: "Myriad Set Pro", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    line-height: 1.5;
+    line-height: 1.6;
+    font-size: 1.2em;
+    margin-top: 4%;
+    font-weight: 200;
+  }

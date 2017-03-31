@@ -1,0 +1,103 @@
+<html>
+	<head>
+		<title>Assignment</title>
+		<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
+		<script src="js/angular-tablesort/js/angular-tablesort.js"></script>
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<link href="js/angular-tablesort/tablesort.css" rel="stylesheet">
+		<link href="/js/sweetalert2/dist/sweetalert2.min.css" rel="stylesheet">
+		
+	</head>
+
+	<body ng-app="BlankApp" ng-cloak ng-controller="AppCtrl">
+		<nav class="navbar navbar-default">
+  			<div class="container-fluid">
+    		<!-- Brand and toggle get grouped for better mobile display -->
+    		<div class="navbar-header">
+      			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        			<span class="sr-only">Toggle navigation</span>
+        			<span class="icon-bar"></span>
+        			<span class="icon-bar"></span>
+        			<span class="icon-bar"></span>
+      			</button>
+      			<a class="navbar-brand" href="#">Astro Channels</a>
+    			</div>
+
+    			<!-- Collect the nav links, forms, and other content for toggling -->
+    			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">      
+      				<ul class="nav navbar-nav navbar-right">
+        				<li><a href="/oauth/facebook">Login</a></li>
+      				</ul>
+    			</div><!-- /.navbar-collapse -->
+  			</div><!-- /.container-fluid -->
+		</nav>
+		<script>
+  			window.fbAsyncInit = function() {
+    			FB.init({
+      			appId      : '1045876668765660',
+      			xfbml      : true,
+      			version    : 'v2.5'
+    			});
+  			};
+
+  			(function(d, s, id){
+     			var js, fjs = d.getElementsByTagName(s)[0];
+     			if (d.getElementById(id)) {return;}
+     			js = d.createElement(s); js.id = id;
+     			js.src = "//connect.facebook.net/en_US/sdk.js";
+     			fjs.parentNode.insertBefore(js, fjs);
+   				}(document, 'script', 'facebook-jssdk'));
+		</script>	           
+  <div ng-show="channels" ng-model="$scope.channels">
+    <section class='table-responsive' style='margin:15px auto;'>
+      <table class="table table-bordered" border="1" ts-wrapper>
+      <thead>
+      <tr>
+        <th ts-criteria="channelStbNumber|parseInt" ts-default class="sortable-channel">
+          Channel Number 
+          <span class="glyphicon glyphicon-sort" aria-hidden="true"></span>
+        </th>
+        <th ts-criteria="channelTitle|lowercase" class="sortable-channel">
+        Channel Title
+          <span class="glyphicon glyphicon-sort" aria-hidden="true"></span>
+        </th>
+        <th>Make it Favorite</th>
+      </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="channel in channels" ts-repeat ng-show="channel">
+          <td>{{channel.channelStbNumber}}</td>
+          <td ng-click="showInformation(channel)">{{channel.channelTitle}}</td>
+          <td ng-if="!channel.favorite"><button ng-click="makeFav(channel)">Make it favorite</button></td>
+        </tr>
+      </tbody>
+    </table>
+    </section>
+  </div>
+
+  <script src="/js/jquery.js"></script>
+  <script>
+  	// console.log(req.user);
+	angular.module('BlankApp',['tableSort']).controller('AppCtrl', function ($scope, $http, $window) {
+		  $http.get('/all-channels').then(function(response) {
+		  	console.log(response.data.channels);
+		  	$scope.channels = response.data.channels;
+		  })
+
+		  $scope.makeFav = function(channel) {
+    		let htmlLogin = "<a href='/oauth/facebook'><button>Login with Facebook</button></a>";
+    			swal({
+						title: "Login",
+						html: htmlLogin,
+						showConfirmButton: false,
+						padding:50
+					});
+  		  }
+	});
+	</script>
+			<script src="js/sweetalert2/dist/sweetalert2.min.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,215 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,200);
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css);
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Raleway', sans-serif;
+}
+
+
+.container { height: 10em;
+             position: relative;
+             z-index: 99;
+            }
+
+
+
+
+        .main-logo {
+            font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+            font-weight: 600;
+            color: #5e5e5e;
+            position: relative;
+            margin-left: 31px;
+            font-size: 20px;
+            margin-bottom: 30px;
+
+
+
+
+
+
+
+
+
+
+
+        }
+.sidebar {
+    position: absolute;
+    /*
+    left: 50%;
+    margin-right: -50%;
+    top: 50%;
+    margin-top: 50%;
+    transform: translate(-50%, -50%);
+    padding-left: 20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-right: 45px;
+    border-radius: 3px;
+    /*
+    -webkit-box-shadow: 2px 2px 7px 1px rgba(0,0,0,0.3);
+-moz-box-shadow: 2px 2px 7px 1px rgba(0,0,0,0.3);
+box-shadow: 2px 2px 7px 1px rgba(0,0,0,0.3);
+    border: 1px solid rgba(0,0,0,0.3) ;
+*/
+  background: white;
+
+}
+
+.rtitle {
+    color: #333;
+    font-size: 20px;
+    font-weight: 200;
+    padding-left: 30px;
+}
+
+.textinput {
+    margin-left: 35px;
+    height: 40px;
+    border-width: 0;
+    border-style: solid;
+    border-color: #666;
+    border-left-width: 5px;
+    background-color: #eee;
+    width: 270px;
+    padding-left: 10px;
+    outline: 0;
+}
+
+.textinput:focus {
+    background-color: #f4f4f4;
+}
+
+.submit {
+    background-color: #1e90ff;
+    height: 40px;
+    width: 65px;
+    border-style: solid;
+    border-width: 0;
+    border-radius: 5px;
+    position: absolute;
+    margin-bottom: 130px;
+    margin-left: 33px;
+    margin-top: 10px;
+    color: #fff;
+    outline: 0;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+
+/* Login with Facebook */
+
+
+/* Shared */
+
+.loginBtn {
+    box-sizing: border-box;
+    position: relative;
+    /* width: 13em;  - apply for fixed size */
+    padding: 0 15px 0 46px;
+    border: none;
+    text-align: left;
+    line-height: 34px;
+    white-space: nowrap;
+    border-radius: 0.1em;
+    font-size: 13px;
+    color: #FFF;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.loginBtn:before {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 34px;
+    height: 100%;
+}
+
+.loginBtn:focus {
+    outline: none;
+}
+
+.loginBtn:active {
+    box-shadow: inset 0 0 0 32px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Facebook */
+
+.loginBtn--facebook {
+    background-color: #4C69BA;
+    background-image: linear-gradient(#4C69BA, #3B55A0);
+    /*font-family: "Helvetica neue", Helvetica Neue, Helvetica, Arial, sans-serif;*/
+    text-shadow: 0 -1px 0 #354C8C;
+    margin-left: 31px;
+    cursor: pointer;
+    margin-bottom: 8px;
+}
+
+.loginBtn--facebook:before {
+    border-right: #364e92 1px solid;
+    background: url('https://s3.amazonaws.com/drumbeatassets/img/icon_facebook.png') 6px 6px no-repeat;
+}
+
+.loginBtn--facebook:hover,
+.loginBtn--facebook:focus {
+    background-color: #5B7BD5;
+    background-image: linear-gradient(#5B7BD5, #4864B1);
+}
+
+/* login button email */
+
+.loginBtnEmail {
+    box-sizing: border-box;
+    position: relative;
+    /* width: 13em;  - apply for fixed size */
+    padding: 0px 14px 0 12px;
+    border: none;
+    text-align: left;
+    line-height: 34px;
+    white-space: nowrap;
+    border-radius: 0.1em;
+    font-size: 13px;
+    color: #FFF;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+.loginBtnEmail:focus {
+    outline: none;
+}
+
+.loginBtnEmail:active {
+    box-shadow: inset 0 0 0 32px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.loginBtn--email {
+    background-color: indigo;
+    /*font-family: "Helvetica neue", Helvetica Neue, Helvetica, Arial, sans-serif;*/
+    text-shadow: 0 -1px 0 #354C8C;
+    margin-left: 0px;
+    margin-top: 10px;
+    cursor: pointer;
+    margin-bottom: 8px;
+}
+
+
+
+.sign-up-link {
+    margin-left: 35px;
+    margin-top: 70px;
+    font-size: 10pt;
+}
+
+.sign-up-link a {
+    color: orange;
+}

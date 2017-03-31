@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style> 
+.navbar-default { padding: 10px 0; }
+body { background-color: white; }
+
+</style>
+
+    <link rel="stylesheet" href="/css/animate.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300" rel="stylesheet" type="text/css">
+    <title>Admin dashboard</title>
+<link rel="shortcut icon" href="https://s3-ap-southeast-1.amazonaws.com/ictexpo/ryte_club/favicon.ico" type="image/x-icon" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+
+
+
+</head>
+
+<body>
+
+
+    <% include partials/topbar.ejs %>
+        <br>
+        <hr>
+
+        <div id="wrapper">
+
+
+            <div class="row">
+                <div class="col-md-2">
+                    <% include partials/admin-sidebar.ejs %>
+                </div>
+                <div class="col-md-10 pull-right">
+
+
+                    <div id="main-wrapper">
+                        <div class="row">
+                            <div class="col-md-4">
+
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">Panel</div>
+                                    <div class="panel-body">
+
+                                        <!--paste the pie charte-->
+                                        <div id="container2" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+
+
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">Panel</div>
+                                    <div class="panel-body">
+                                        <!--paste the pie charte-->
+                                        <div id="container3" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">Panel</div>
+                                    <div class="panel-body">
+                                        <!--paste the pie charte-->
+                                        <div id="container4" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+        <script>
+            $(function () {
+                $(document).ready(function () {
+                    // Build the chart
+                    $('#container2').highcharts({
+                        chart: {
+                            plotBackgroundColor: null,
+                            plotBorderWidth: null,
+                            plotShadow: false,
+                            type: 'pie'
+                        },
+                        title: {
+                            text: 'Device user statistics'
+                        },
+                        tooltip: {
+                            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                        },
+                        plotOptions: {
+                            pie: {
+                                allowPointSelect: true,
+                                cursor: 'pointer',
+                                dataLabels: {
+                                    enabled: true,
+                                    format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                                    style: {
+                                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                                    }
+                                },
+                                showInLegend: true
+                            }
+                        },
+                        series: [{
+                            name: "Brands",
+                            colorByPoint: true,
+                            data: [{
+                                name: "Active Device",
+                                y: 60.00
+                            }, {
+                                name: "diactivated Device",
+                                y: 10.00,
+                                sliced: true,
+                                selected: true
+                            }]
+                        }]
+                    });
+
+
+
+
+
+
+
+
+                    $('#container3').highcharts({
+                        chart: {
+                            plotBackgroundColor: null,
+                            plotBorderWidth: null,
+                            plotShadow: false,
+                            type: 'pie'
+                        },
+                        title: {
+                            text: 'Device user statistics'
+                        },
+                        tooltip: {
+                            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                        },
+                        plotOptions: {
+                            pie: {
+                                allowPointSelect: true,
+                                cursor: 'pointer',
+                                dataLabels: {
+                                    enabled: true,
+                                    format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                                    style: {
+                                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                                    }
+                                },
+                                showInLegend: true
+                            }
+                        },
+                        series: [{
+                            name: "Brands",
+                            colorByPoint: true,
+                            data: [{
+                                name: "Car",
+                                y: 60.00
+                            }, {
+                                name: "Lorry",
+                                y: 10.00,
+                                sliced: true,
+                                selected: true
+                            }, {
+                                name: "Baby",
+                                y: 10.00
+                            }, {
+                                name: "Senior Citizen",
+                                y: 20.00
+                            }]
+                        }]
+                    });
+
+
+
+
+                    $('#container4').highcharts({
+                        chart: {
+                            plotBackgroundColor: null,
+                            plotBorderWidth: null,
+                            plotShadow: false,
+                            type: 'pie'
+                        },
+                        title: {
+                            text: 'Device user statistics'
+                        },
+                        tooltip: {
+                            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                        },
+                        plotOptions: {
+                            pie: {
+                                allowPointSelect: true,
+                                cursor: 'pointer',
+                                dataLabels: {
+                                    enabled: true,
+                                    format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                                    style: {
+                                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                                    }
+                                },
+                                showInLegend: true
+                            }
+                        },
+                        series: [{
+                            name: "Brands",
+                            colorByPoint: true,
+                            data: [{
+                                name: "Car",
+                                y: 60.00
+                            }, {
+                                name: "Lorry",
+                                y: 10.00,
+                                sliced: true,
+                                selected: true
+                            }, {
+                                name: "Baby",
+                                y: 10.00
+                            }, {
+                                name: "Senior Citizen",
+                                y: 20.00
+                            }]
+                        }]
+                    });
+
+
+                });
+            });
+        </script>
+
+
+
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+    <link rel="shortcut icon" href="https://s3-ap-southeast-1.amazonaws.com/ictexpo/ryte_club/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="css/login.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+
+      @media (max-width: 414px)   {
+
+      .sidebar {
+        position: absolute;
+        top: 50%;
+        left: 5%; }
+ .main-logo {
+    margin-left: 7px;
+}
+.rtitle { margin-left: -20px;}
+.sign-up-link { margin-left: 10px;}
+.textinput { margin-left: 10px;}
+.submit { margin-left: 10px;}
+.loginBtn { margin-left: 7px;}
+
+}
+
+     @media (min-width: 415px)   {
+
+      .sidebar {
+         position:absolute;
+    left:35%;
+    top:50%;
+
+        }
+
+ .main-logo {
+    margin-left: 7px;
+}
+.rtitle { margin-left: -20px;}
+.sign-up-link { margin-left: 10px;}
+.textinput { margin-left: 10px;}
+.submit { margin-left: 10px;}
+.loginBtn { margin-left: 7px;}
+
+}
+
+</style>
+</head>
+
+<body>
+  <script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '212910835870244',
+      cookie     : true,
+      xfbml      : true,
+      version    : 'v2.8'
+    });
+    FB.AppEvents.logPageView();   
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+    <div class="container">
+       <!-- <div class="sidebar"> -->
+       <div class="sidebar">
+       <h2 class="main-logo" onclick="location.href='/';">Astro Assignment 3</h2>
+        <button class="loginBtn loginBtn--facebook" onclick="location.href='/oauth/facebook';">
+                Login with Facebook
+            </button>
+        </div>
+            </div>
+
+        <style>
+        /*
+    .register-now {
+        margin-top: 15px;
+        font-size: 10px;
+        font-weight: 400;
+        cursor: pointer;
+        color: white;
+    }
+    .sign-up-link { color: black;}
+
+
+    @media(min-width:768px) {
+        .register-now {
+            font-size: 22px;
+        }
+    }
+
+    @media(min-width:992px) {
+        .register-now {
+            font-size: 25px;
+        }
+    }
+
+    @media(min-width:1200px) {
+        .register-now {
+            font-size: 30px;
+        }
+    }
+
+    */
+        </style>
+        <script>
+        var form = document.getElementById("form");
+        form.addEventListener("blur", function(event) {
+            hideKeyboard();
+        }, true);
+
+        function hideKeyboard() {
+            document.activeElement.blur();
+            Array.prototype.forEach.call(document.querySelectorAll('input, textarea'), function(it) {
+                it.blur();
+            });
+        }
+        </script>
+        <script src="js/ganalytics.js"></script>
+</body>
+
+</html>
